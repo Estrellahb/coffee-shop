@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="咖啡商城代码\coffee shop\css\bgcolor.css" type="text/css">
+
+    <style>
+        .welcome{
+            height: 50px;
+        }
+        .img{
+            background-color: white;
+            height: 88px;
+            text-align: center;
+        }
+        .search{
+            height: 100px;
+            background-color: aqua;
+        }
+        .Body{
+            display: flex;
+            height: 40px;
+            width: 100%;
+            background-color: #da930f;
+        }
+        .Body .all-shop{
+            display: inline-block;
+            height: 40px;
+            width: 25%;
+            white-space: nowrap;
+            line-height: 40px;
+            font-size: 20px;
+            color: white;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer; /* 添加这行以将鼠标光标变为手型 */
+        }
+        .Body .shop1{
+            display: inline-block;
+            height: 40px;
+            width: 85px;
+            line-height: 40px;
+            font-size: 16px;
+            color: white;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .Body .shop1:hover{
+            background-color: rgba(151, 92, 5, 0.871)
+        }
+        
+        .Body-nag{
+            width: 25%;
+            background-color: white;
+            float: left;
+            border:3px solid rgba(151, 92, 5, 0.871);
+        }
+        h4{
+            color: #da930f;
+            padding: 5px 10px; 
+            margin: 0;
+        }
+        .ul-list{
+            list-style: none;
+            padding: 0 3px; /* 去除列表的内边距 */
+            margin: 0;
+        }
+        .ul-list .li{
+            font-size: small;
+            display: inline; /* 让列表项水平排列 */
+            text-align: center;
+            padding: 0 ;
+        }
+        .li+.li::before{
+            content: "|";
+            padding: 0 5px;
+            /* 使用 ::before 伪元素来在列表项之间插入竖线分隔符 "|"。 */
+        }
+        .Body-nag1{
+            height: 90px;
+            background-color: gray;
+            float: right;
+            width: 25%;
+        }
+
+        .Body-content{
+            height: 90px;
+            background-color: lightsalmon;
+            width: 50%;
+            float: left;
+        }
+        .Body-footer{
+            height: 90px;
+            background-color: cornflowerblue;
+        }
+        /* flex 弹性布局 */
+        /* 设置在div父级元素上
+            justify-content 决定主轴对齐方式  属性 ：
+            align-items  决定交叉轴对齐方式
+            align-content 定义多根对齐轴方式 */
+    </style>
+</head>
+<body>
+    <div class="welcome">
+
+        <!-- 欢迎条 -->
+    </div>
+
+    <div class="img" >
+<img src="D:\html\咖啡商城代码\coffee shop\img\home\banner3.jpg" width="950px" height="88px" >
+        <!-- 图片 -->
+    </div >
+
+    <div class="search">
+        <img src="D:\html\咖啡商城代码\coffee shop\img\site_logo.gif" width="227px" height="60px">
+        <!-- 搜索框 -->
+    </div>
+    
+    <div >
+        <!-- 主体部分 -->
+        <div class="Body">
+            <div class="all-shop"><a href="" class="shop1">全部商城分类</a></div>
+            <div class="shop1"><a href="" class="shop1">首页</a></div>
+            <div class="shop1"><a href="" class="shop1">商品分类</a></div>
+            <div class="shop1"><a href="" class="shop1">商品详情</a></div>    
+        </div>
+        <div class="Body-nag">
+            <!-- 主体导航栏 -->
+            <div>
+                <h4>白咖啡</h4>
+                <ul class="ul-list">
+                    <li class="li">大白马咖啡</li>
+                    <li class="li">白咖啡</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>咖啡</h4>
+                <ul class="ul-list">
+                    <li class="li">咖啡豆</li>
+                    <li class="li">咖啡生豆</li>
+                    <li class="li">有机咖啡</li>
+                    <li class="li">咖啡胶囊</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>咖啡器具</h4>
+                <ul class="ul-list">
+                    <li class="li">奶泡壶</li>
+                    <li class="li">压粉器</li>
+                    <li class="li">奶泡壶</li>
+                    <li class="li">磕粉盒</li>
+                    <li class="li">滤纸滤器滤布滤杯</li>
+                    <li class="li">奶泡壶</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>白咖啡</h4>
+                <ul class="ul-list">
+                    <li class="li">大白马咖啡</li>
+                    <li class="li">白咖啡</li>
+                </ul>
+            </div>
+
+            
+
+            <div>
+                <h4>白咖啡</h4>
+                <ul class="ul-list">
+                    <li class="li">大白马咖啡</li>
+                    <li class="li">白咖啡</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>白咖啡</h4>
+                <ul class="ul-list">
+                    <li class="li">大白马咖啡</li>
+                    <li class="li">白咖啡</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>白咖啡</h4>
+                <ul class="ul-list">
+                    <li class="li">大白马咖啡</li>
+                    <li class="li">白咖啡</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>白咖啡</h4>
+                <ul class="ul-list">
+                    <li class="li">大白马咖啡</li>
+                    <li class="li">白咖啡</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="Body-content">2
+            <!-- 主题内容 -->
+        </div>
+
+        <div class="Body-nag1">3
+            <!-- 主体右侧 -->
+        </div>
+
+    </div>
+    
+    <div>
+页脚
+    </div>
+
+</body>
+</html>
