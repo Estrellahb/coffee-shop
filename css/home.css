@@ -2,52 +2,61 @@
 .welcome{
     height: 50px;
 }
-.img{
+/* .img{
     background-color: white;
     height: 88px;
     text-align: center;
-}
+} */
 .search{
-    height: 60px;
+    height: 70px;
     background-color: aqua;
     display:flex;
 }
 .search-box{
     font-size: 0;
+    width: 50%;
 }
 .search-logo{
     width: 25%;
     
 }
 .search-box{
+    font-size: 0;
     width: 50%;
-    
+    box-sizing: border-box;
 }
 .search-form{
-    border: 1px burlywood solid;
-    box-sizing: border-box;
+    border: 2px burlywood solid;
+    margin-top: 5px;
     
 }
 .search-text{
     height: 30px;
     width: 80%;
-    line-height: 30px;
+    line-height: 20px;
     font-size: 12px;
     border: 0;
-    
-    
+    padding: 0%;
+    box-sizing: border-box;
+    vertical-align: middle;/*?*/
 }
 .search-submit{
-    background-color:orange;
-    font-size: 12px;
-    font-weight: 700;
-    color:white;
     width: 20%;
     height: 30px;
+    background-color:orange;
+    font-size: 20px;
+    font-weight: 600;
+    color:white;
     border: 0;
-    line-height: 30px;
+    padding: 0;
+    line-height: 20px;/*?*/
     box-sizing: border-box;
     vertical-align:middle;
+}
+.search-word{
+    font-size: 13px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .search-btn{
     width: 25%;
@@ -62,6 +71,7 @@
 .Body .all-shop{
     display: inline-block;
     height: 40px;
+    /* margin: 0 100px;  还是没解决*/
     width: 25%;
     white-space: nowrap;
     line-height: 40px;
@@ -71,13 +81,12 @@
     text-align: center;
     text-decoration: none;
     cursor: pointer; /* 添加这行以将鼠标光标变为手型 */
-}
+}/* 添加padding margin 删掉width */
+    /* 标准盒模型和ie盒模型要看看 */
 .Body .shop1{
     display: inline-block;
     height: 40px;
     width: 85px;
-    /* 添加padding margin 删掉width */
-    /* 标准盒模型和ie盒模型要看看 */
     line-height: 40px;
     font-size: 16px;
     color: white;
@@ -136,6 +145,8 @@ h4{
 }
 a{
     text-decoration: none;
+    cursor: pointer;
+    color:gray;
 }
 /* flex 弹性布局 */
 /* 设置在div父级元素上
