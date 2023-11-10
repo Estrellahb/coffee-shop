@@ -2,15 +2,34 @@
 .welcome{
     height: 50px;
 }
-/* .img{
-    background-color: white;
-    height: 88px;
-    text-align: center;
-} */
+.nav{
+    height: 40px;
+    position: relative;
+    color: gray;
+}
+.nav-1{
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    font-size: 12px;
+    color: #444444;
+}
+.nav-1 ul{
+    margin: 0;
+    display: inline-flex;
+    list-style: none;
+    color: gray;
+}
+
+.img1{
+    width: 100%;
+    height: auto;
+} 
 .search{
     height: 70px;
-    background-color: aqua;
+    
     display:flex;
+    margin: 0 5% 0 5%;
 }
 .search-box{
     font-size: 0;
@@ -18,7 +37,9 @@
 }
 .search-logo{
     width: 25%;
-    
+}
+.search-logo img{
+    align-items: center;
 }
 .search-box{
     font-size: 0;
@@ -60,7 +81,18 @@
 }
 .search-btn{
     width: 25%;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
+}
+.search-btn button{
+    color:#444444;
+    background-color:white;
+}
+.kong{
+    margin: 0 5% 0 5%;
 }
 .Body{
     display: flex;
@@ -128,16 +160,44 @@ h4{
 }
 .Body-nag1{
     height: 90px;
-    background-color: gray;
     float: right;
-    width: 25%;
+    width: 24%;
+    margin: 0;
 }
-
+.Body-nag1-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    border-bottom: 1px solid black;
+}
+.Body-nag1-info1{
+    display: flex;
+    flex-wrap: wrap; /* 默认是不换行 */
+    height: 30px;
+    font-size: 12px;
+    color: darkgrey;
+}
+.Body-nag1-info1 img{
+    margin: 3px;
+    width: 100%;
+    height: auto;
+}
+.Body-nag1-info1 video{
+    width: 100%;
+    height: auto;
+}
+.Body-nag1-item{
+    box-sizing: border-box;
+    width: 50%;
+    margin: 5px 0;
+}
 .Body-content{
     height: 90px;
     background-color: lightsalmon;
     width: 50%;
     float: left;
+    margin: 0;
 }
 .Body-footer{
     height: 90px;
@@ -147,6 +207,24 @@ a{
     text-decoration: none;
     cursor: pointer;
     color:gray;
+}
+.shop{
+    float: left;
+    margin: 2px 13px 2px 13px;
+}
+.shop .img1{
+    width: 50%;
+}
+.shop .price{
+ color: red;
+ height: 20px;
+}
+.shop .sell{
+    font-style: italic;
+    font-size: small;
+    color:lightgray;
+    height: 20px;
+
 }
 /* flex 弹性布局 */
 /* 设置在div父级元素上
