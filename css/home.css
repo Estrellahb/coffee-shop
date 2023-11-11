@@ -6,6 +6,7 @@
     height: 40px;
     position: relative;
     color: gray;
+    background-color: #efefef;
 }
 .nav-1{
     position: absolute;
@@ -13,6 +14,8 @@
     right: 5px;
     font-size: 12px;
     color: #444444;
+    
+    
 }
 .nav-1 ul{
     margin: 0;
@@ -92,7 +95,8 @@
     background-color:white;
 }
 .kong{
-    margin: 0 5% 0 5%;
+    margin: 0 5%;
+    
 }
 .Body{
     display: flex;
@@ -226,6 +230,7 @@ a{
     height: 20px;
 
 }
+
 /* flex 弹性布局 */
 /* 设置在div父级元素上
     justify-content 决定主轴对齐方式  属性 ：
@@ -233,3 +238,20 @@ a{
     align-content 定义多根对齐轴方式 */
 
     /* vertical-align 指定行内元素或者表格单元格元素垂直对齐方式 */
+div .yejiao{
+    position: relative;
+    background-color:rgba(151, 92, 5, 0.871);
+    width: 100%;
+    top: 800px;
+    bottom: auto;
+}
+.ul-list-li0{
+    color: lightgray;
+    font-size: 13px;
+    display: inline; /* 让列表项水平排列 */
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+
+      
