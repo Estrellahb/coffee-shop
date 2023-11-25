@@ -7,13 +7,62 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="css/home.css" type="text/css">
+    <link rel="stylesheet" href="css/swiper.min.css">
 
     <style>
-
+        /* 轮播图 */
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
     </style>
+    
 </head>
 
 <body>
+    <!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            /* 这一行代码是为了确保在文档内容加载完成后再执行相应的 JavaScript 代码。这是因为当浏览器加载 HTML 文档时，它是逐行解析并执行的。如果你的 JavaScript 代码包含对 DOM 元素的操作，而这些元素还没有完全加载，就有可能导致代码执行时无法找到相应的元素，从而产生错误。
+
+通过使用 DOMContentLoaded 事件，你可以确保在文档的 HTML 结构已经完全加载、解析，并且可以通过 JavaScript 访问时再执行相关的脚本。这有助于避免由于元素未完全加载而引发的错误，特别是在使用 JavaScript 操作 DOM 时。
+
+例如，在Swiper初始化代码中，确保在 DOMContentLoaded 事件触发后执行 Swiper 初始化，可以避免在页面尚未加载完成时尝试初始化 Swiper，从而防止因为找不到相应的元素而导致的错误。 */
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false
+    });
+});
+    </script>
     <div class="welcome"><!-- 欢迎条 -->
         <div class="nav">
             <div class="nav-1">
@@ -141,7 +190,30 @@
         </div>
 
         <div class="Body-content">
-            <img class="img1" src="img/home/201402190025061730.jpg">
+            <!-- 轮播图 -->
+             <!-- Swiper -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img class="img1" src="img/home/201402190025061730.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="img1" src="img/home/201402190025064958.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="img1" src="img/home/201402190025066931.jpg">
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+            
             <div>
                 <div class="shop">
                     <div><img src="img/home/taobao/1.jpg_.webp"></div>
