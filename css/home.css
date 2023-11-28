@@ -96,6 +96,7 @@
 }
 .kong{
     margin: 0 5%;
+    position: relative;
     
 }
 .Body{
@@ -197,8 +198,8 @@ h4{
     margin: 5px 0;
 }
 .Body-content{
+    height: 100%;
     
-    background-color: lightsalmon;
     width: 50%;
     float: left;
     margin: 0;
@@ -238,17 +239,34 @@ a{
     align-content 定义多根对齐轴方式 */
 
     /* vertical-align 指定行内元素或者表格单元格元素垂直对齐方式 */
-div .yejiao{
-    position: relative;
-    background-color:rgba(151, 92, 5, 0.871);
-    width: 100%;
-    top: 800px;
-    bottom: auto;
-}
+    div .yejiao {
+        display: flex;
+        justify-content:flex-end;
+        align-items: center;
+        background-color: rgba(151, 92, 5, 0.871);
+        width: 100%;
+        height: 100px;
+        margin-top: auto;
+        margin-bottom: 0;
+    }
+    
 .ul-list-li0{
     color: lightgray;
     font-size: 13px;
     display: inline; /* 让列表项水平排列 */
-    text-align: right;
+    
     margin-bottom: 5px;
+}
+.ul-list-li0+.ul-list-li0::before{
+    content: "/";
+}
+.login{
+    background-color: green;
+    color: #efefef;
+    border: 0;
+}
+.register{
+    background-color: orange;
+    color: #efefef;
+    border: 0;
 }
