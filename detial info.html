@@ -9,6 +9,51 @@
         function changeImage(imageSrc) {
             document.getElementById('largeImg').src = imageSrc;
         }
+        function drawCav() {
+        var c = document.getElementById("canvas1");
+        var ctx = c.getContext("2d");
+        var img = new Image(); //它的功能等价于 document.createElement('img')
+        img.src = "img/detail/1.jpg";
+        img.onload = function () {
+          // 图像加载完成 ，绘制画布中
+          ctx.drawImage(img, 0, 0);
+        };
+        initCanvas1() 
+      }
+      /*放大镜*/
+      function initCanvas1() {
+        canvas1.onmousemove = canvas1_onmouse_move; //添加原图像获取鼠标焦点时的处理函数
+        canvas1.onmouseout = canvas1_onmouse_out; //添加原图像失去鼠标焦点时的处理函数
+      }
+      //鼠标在大图上移动时的处理函数
+      function canvas1_onmouse_move(ev) {
+        console.log(ev)
+        var canvas1, canvas2;
+        var x, y; //鼠标在canvas元素中的相对坐标点
+        canvas1 = document.getElementById("canvas1"); //获取原图像使用的canvas元素
+        canvas2 = document.getElementById("canvas2"); //获取放大镜中图像使用的canvas元素
+        var cxt2 = canvas2.getContext("2d"); //获取放大镜中图像使用的canvas元素的图形上下文对象
+        canvas2.style.display = "block"; //显示放大镜
+        x = ev.offsetX; //获取鼠标在原图上的相对x坐标
+        y = ev.offsetY; //获取鼠标在原图上的相对y坐标
+        canvas2.style.left = x + 5 + "px"; //设置放大镜的左边距，距离鼠标的坐标加5，防止鼠标移动到放大镜上
+        canvas2.style.top = y + 5 + "px"; //设置放大镜的上边距，距离鼠标的坐标加5，防止鼠标移动到放大镜上
+        //放大2倍绘制放大镜图像
+        //原图像从坐标 (x-50,y-50) 处截取一个宽度为 100 高度为 100 的图像。
+        //并将其绘制到画布的 (0, 0) 坐标处，并将其缩放为宽 200、高 200 的图像。
+        cxt2.drawImage(canvas1, x - 50, y - 50, 100, 100, 0, 0, 200, 200);
+      }
+      //鼠标移出原图像外
+      function canvas1_onmouse_out() {
+        var canvas2 = document.getElementById("canvas2"); //获取放大镜所用canvas元素
+        //重置canvas元素的位置
+        canvas2.style.left = "0px";
+        canvas2.style.top = "0px";
+        //隐藏放大镜
+        canvas2.style.display = "none";
+      }
+      drawCav();
+        
     </script>
 
 <style>
@@ -132,6 +177,7 @@
             font-size: 11px;
             
         }
+       
 </style>
     <link rel="stylesheet" href="css/home.css" type="text/css">
 </head>
@@ -215,13 +261,13 @@
         </div>
         <div class="describe-contact">
             <!-- 中间文字描述 -->
-            <h3>【热销】进口咖啡</h3>
+            <h3>【热销36万 特价全国包邮】越南原装进口3合1中原g7速溶咖啡800g</h3>
             <div class="describe">
                 <!-- 红字部分 -->
                 <span>
-                lllllllllllll
-                lllllllllllll
-                lllllllllllll
+                    新加坡OWL 猫头鹰三合一速溶咖啡粉45条900g 新藏外包邮
+                    新加坡 爷爷金装原味咖啡1000克50杯装3合1速溶咖啡包邮
+                
                 </span>
             </div>
 
@@ -231,8 +277,8 @@
                 <!-- 文字层 -->
                 <div class="text-overlay"><b>￥ 33.99</b>
                     <span class="rounded-span">即将原价</span>
-                    <p>一口价</p>
-                    <p>广东深圳</p>
+                    <p>一口价 ￥29.31/500g</p>
+                    <p>广东深圳至 大连 快递 ：0.00</p>
                 </div>
             </div>
             <br>
@@ -266,5 +312,22 @@
         </div>
         
     </div>
+    <div class="yejiao">
+
+        <ul class="ul-list">
+            <li class="ul-list-li0">网站地图</li>
+            <li class="ul-list-li0">关于我们</li>
+            <li class="ul-list-li0">沙龙动态</li>
+            <li class="ul-list-li0">友情链接</li>
+            <li class="ul-list-li0">联系我们</li>
+            <li class="ul-list-li0">版权声明</li>
+            <button class="login" id="login">会员登陆</button>
+            <button class="register" id="register">会员注册</button>
+        </ul>
+
+        <!-- 页脚 -->
+
+    </div>
+
 </body>
 </html>

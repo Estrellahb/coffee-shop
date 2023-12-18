@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>购物车</title>
+    <style>
+      a {
+        text-decoration: none;
+      }
+      .nav {
+        height: 100px;
+      }
+      .nav .nav-box {
+        display: flex;
+      }
+      .nav .nav-box .box-1 {
+        width: 25%;
+        height: 60px;
+      }
+      .nav .nav-box .box-2 {
+        width: 50%;
+        height: 60px;
+      }
+      .nav .nav-box .box-2 .form {
+        border: 3px solid #b8873b;
+        width: 80%;
+      }
+      .nav .nav-box .box-2 .form .text {
+        width: 80%;
+        height: 30px;
+        padding: 5px;
+        background-color: #fff;
+        line-height: 30px;
+        color: #999;
+        font-size: 20px;
+        border: 0;
+        box-sizing: border-box;
+        vertical-align: middle;
+      }
+      .nav .nav-box .box-2 .form .submit {
+        width: 20%;
+        color: #fff;
+        background-color: #b8873b;
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
+        border: 0;
+        font-weight: 700;
+        box-sizing: border-box;
+        vertical-align: middle;
+      }
+      .nav .nav-box .box-2 .hotwords {
+        font-size: 12px;
+        color: #a6a6a6;
+        padding-left: 20px;
+        margin-top: 5px;
+      }
+      .nav .nav-box .box-2 .hotwords a {
+        color: #a6a6a6;
+        font-size: 12px;
+        margin-right: 10px;
+      }
+      .nav .nav-box .box-3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: 60px;
+      }
+      .nav .nav-box .box-3 .right {
+        display: inline-block;
+        margin-left: 5px;
+        border: 5px solid #a6a6a6;
+        border-color: transparent transparent transparent #666;
+      }
+      .nav .nav-box .box-3 button {
+        margin-right: 20px;
+        padding: 0 25px;
+        background-color: #efefef;
+        height: 30px;
+        border: #efefef 1px solid;
+        border-radius: 5px;
+      }
+      .main {
+        width: 80%;
+        margin: auto;
+      }
+      .title {
+        display: flex;
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: #999;
+      }
+      .box-1 {
+        width: 45%;
+      }
+      .box-2 {
+        width: 10%;
+      }
+
+      .box-3 {
+        width: 20%;
+      }
+      .box-padding {
+        padding-left: 40px;
+      }
+      .box-padding-1 {
+        padding-left: 20px;
+      }
+      .img {
+        width: 80px;
+      }
+      .shop-box {
+        display: flex;
+        padding: 10px;
+        background-color: #f7cf92;
+        font-size: 12px;
+        color: #666;
+        margin: 10px 0;
+      }
+      .total {
+        text-align: right;
+        font-size: 12px;
+        color: #999;
+      }
+      .color {
+        font-size: 16px;
+        font-weight: 700;
+        color: #d2691e;
+      }
+      .total-btn {
+        width: 80px;
+        height: 40px;
+        border: none;
+        background-color: #d2691e;
+        color: #fff;
+        font-weight: 700;
+        letter-spacing: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 导航条 -->
+    <div class="nav">
+      <div class="nav-box">
+        <div class="box-1">
+          <a href="">
+            <img src="img/site_logo.gif" alt="" />
+          </a>
+        </div>
+        <div class="box-2">
+          <div class="form">
+            <form action="" method="get">
+              <input class="text" type="text" /><input
+                class="submit"
+                type="submit"
+                value="搜索"
+              />
+            </form>
+          </div>
+          <div class="hotwords">
+            <span>热门搜索：</span>
+            <a href="">白咖啡</a>
+            <a href="">咖啡豆</a>
+            <a href="">咖啡机</a>
+            <a href="">咖啡杯</a>
+            <a href="">咖啡厅</a>
+          </div>
+        </div>
+        <div class="box-3">
+          <button>
+            购物车4种商品
+            <div class="right"></div>
+          </button>
+          <button>我的订单</button>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <!-- 标题 -->
+      <div class="title">
+        <div class="box-1">
+          <input type="checkbox" name="" id="" onclick="checkAll(this)" />
+          <span>全选 商品信息</span>
+        </div>
+        <div class="box-2">单价（元）</div>
+        <div class="box-2">数量</div>
+        <div class="box-2">金额（元）</div>
+        <div class="box-3">操作</div>
+      </div>
+      <!-- 麦斯威尔 -->
+      <form action="">
+        <div class="box-1">
+          <input
+            type="checkbox"
+            name="shop"
+            id="shop"
+            onclick="check(this)"
+          /><span> 品牌：麦斯威尔</span>
+        </div>
+        <!-- 麦斯威尔的第一条商品 -->
+        <div class="shop-box" id="shop_item_1">
+          <div>
+            <input
+              type="checkbox"
+              name="goods"
+              id=""
+              onchange="checkItem(this)"
+            />
+          </div>
+          <div class="box-2">
+            <img class="img" src="img/shoppingcart/3.jpg" alt="" />
+          </div>
+          <div class="box-2">
+            麦斯威尔Maxwell House三合一速溶咖啡粉 特浓咖啡 3盒装 共90条
+          </div>
+          <div class="box-3 box-padding">特浓咖啡 3盒装 共90条</div>
+          <div class="box-2" id="shop_item_1_price">89.2</div>
+          <div class="box-2">
+            <input
+              style="width: 50px"
+              type="number"
+              value="1"
+              id="shop_item_1_value"
+              onchange="count('shop_item_1',89.2)"
+            />
+          </div>
+          <div class="box-2 box-padding calculate" id="shop_item_1_total">
+            89.20
+          </div>
+          <div class="box-3">
+            <span>移入收藏夹</span>
+            <span onclick="delFromCart('shop_item_1')">删除</span>
+          </div>
+        </div>
+        <!-- 麦斯威尔的第二条商品 -->
+        <div class="shop-box" id="shop_item_2">
+          <div>
+            <input
+              type="checkbox"
+              name="goods"
+              id=""
+              onchange="checkItem(this)"
+            />
+          </div>
+          <img class="img" src="img/shoppingcart/4.jpg" alt="" />
+          <div class="box-2 box-padding-1">
+            麦斯威尔Maxwell House三合一速溶咖啡粉 原味+特浓+奶香 3盒装21条
+          </div>
+          <div class="box-3 box-padding">原味+特浓+奶香 3盒装21条</div>
+          <div class="box-2">29.0</div>
+          <div class="box-2">
+            <input style="width: 50px" type="number" value="1" id="shop_item_2_value"  onchange="count('shop_item_2',29.0)"/>
+          </div>
+          <div class="box-2 box-padding calculate" id="shop_item_2_total">29.0</div>
+          <div class="box-3">
+            <span>移入收藏夹</span>
+            <span onclick="delFromCart('shop_item_2')">删除</span>
+          </div>
+        </div>
+      </form>
+      <!-- 雀巢咖啡 -->
+      <form action="">
+        <div class="box-1">
+          <input
+            type="checkbox"
+            name="shop"
+            id=""
+            onclick="check(this)"
+          /><span> 品牌：雀巢咖啡</span>
+        </div>
+        <!-- 雀巢咖啡第一条商品 -->
+        <div class="shop-box" id="shop_item_3">
+          <div>
+            <input type="checkbox" name="goods" id=""  onchange="checkItem(this)"/>
+          </div>
+          <img class="img" src="img/shoppingcart/1.jpg" alt="" />
+          <div class="box-2 box-padding-1">
+            Nestle雀巢咖啡1+2特浓速溶咖啡粉三合一90条装即冲包邮coffee
+          </div>
+          <div class="box-3 box-padding">特浓速溶咖啡粉三合一90条装</div>
+          <div class="box-2">92.0</div>
+          <div class="box-2">
+            <input style="width: 50px" type="number" value="1" />
+          </div>
+          <div class="box-2 box-padding calculate">92.0</div>
+          <div class="box-3">
+            <span>移入收藏夹</span>
+            <span  onclick="delFromCart('shop_item_3')">删除</span>
+          </div>
+        </div>
+        <!-- 雀巢咖啡第二条商品 -->
+        <div class="shop-box" id="shop_item_4">
+          <div>
+            <input type="checkbox" name="goods" id=""  onchange="checkItem(this)"/>
+          </div>
+          <img class="img" src="img/shoppingcart/2.jpg" alt="" />
+          <div class="box-2 box-padding-1">
+            Nestle雀巢咖啡1+2原味三合一速溶咖啡粉15g*100条装即溶袋
+          </div>
+          <div class="box-3 box-padding">三合一速溶咖啡粉15g*100条装</div>
+          <div class="box-2">33.99</div>
+          <div class="box-2">
+            <input style="width: 50px" type="number" value="1" />
+          </div>
+          <div class="box-2 box-padding calculate">33.99</div>
+          <div class="box-3">
+            <span>移入收藏夹</span>
+            <span onclick="delFromCart('shop_item_4')">删除</span>
+          </div>
+        </div>
+      </form>
+      <div class="total">
+        <span>已选商品</span>
+        <span class="color" id="piece">0</span>
+        <span>件 合计（不含运费）</span>
+        <span class="color" id="money">￥32</span>
+        <button class="total-btn" onclick="calculate()">结算</button>
+      </div>
+    </div>
+    <script>
+      //删除商品 为每一条商品添加一个id，然后传入id进行删除
+      function delFromCart(gid) {
+        var y = confirm("确定要删除此商品？");
+        if (y == true) {
+          var goods = document.getElementById(gid);
+
+          var shop = goods.parentNode;
+          //删除商品
+          shop.removeChild(goods);
+          //如果店铺空了，则删除店铺
+          if (shop.children.length == 1) {
+            shop.parentNode.removeChild(shop);
+          }
+        }
+      }
+      // 选择商品  
+      // 为每一条商品最前边的多选框添加name=goods，
+      // 为每个品牌的多选框添加name=shop
+      function checkItem(e) {
+        if (e.checked) {
+          var j = 0;
+          var o = e.form.goods;
+          for (i = 0; i < o.length; i++) {
+            if (o[i].checked) {
+              j++;
+            } else break;
+          }
+          if (j == o.length) {
+            e.form.shop.checked = true;
+          }
+        } else e.form.shop.checked = false;
+      }
+      //店铺全选按钮
+      function check(e) {
+        console.log(e.form);
+        var o = e.form.goods;
+        for (i = 0; i < o.length; i++) {
+          if (e.checked) {
+            o[i].checked = true;
+          } //全选
+          else {
+            o[i].checked = false;
+          } //取消全选
+        }
+      }
+
+      //全选按钮
+      function checkAll(e) {
+        var o = document.getElementsByTagName("input");
+        for (i = 0; i < o.length; i++) {
+          if (o[i].type == "checkbox") {
+            if (e.checked) {
+              o[i].checked = true;
+            } //全选
+            else {
+              o[i].checked = false;
+            } //取消全选
+          }
+        }
+      }
+      //每条商品添加
+      //每条商品添加id
+      function count(gid, price) {
+        var value_id = gid + "_value";
+        var total_id = gid + "_total";
+        var n = document.getElementById(value_id).value;
+        document.getElementById(total_id).innerHTML = n * price;
+        calculate();
+      }
+      //统计件数、金额，把计算总额的加上class calculate
+      function calculate() {
+        var money = 0;
+        var o = document.getElementsByTagName("input");
+        for (i = 0; i < o.length; i++) {
+          if (o[i].type == "checkbox") {
+            if (o[i].checked && o[i].name == "goods") {
+              money += +o[i].parentNode.parentNode.children[6].innerHTML
+            }
+          }
+        }
+        document.getElementById("money").innerHTML = money.toFixed(2);
+      }
+    </script>
+  </body>
+</html>
